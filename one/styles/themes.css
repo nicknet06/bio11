@@ -1,0 +1,520 @@
+/* Theme Variables */
+
+/* Default Theme - Light */
+:root {
+    /* Base colors */
+    --color-primary: #4169e1;
+    --color-primary-light: #667eea;
+    --color-primary-dark: #2a4bb9;
+    --color-secondary: #6c63ff;
+    --color-secondary-light: #8a84ff;
+    --color-secondary-dark: #4e47cc;
+    --color-accent: #ff6b6b;
+    
+    /* Theme colors */
+    --background: #ffffff;
+    --background-alt: #f8f9fa;
+    --foreground: #111827;
+    --foreground-alt: #374151;
+    --foreground-muted: #6b7280;
+    
+    /* Component colors */
+    --card-bg: #ffffff;
+    --card-bg-hover: #f9fafb;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --card-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.12);
+    
+    /* Border colors */
+    --border-color: #e5e7eb;
+    --border-color-hover: #d1d5db;
+    
+    /* Text colors */
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --text-tertiary: #9ca3af;
+    --text-on-primary: #ffffff;
+    --text-on-secondary: #ffffff;
+    
+    /* Input colors */
+    --input-bg: #f9fafb;
+    --input-border: #e5e7eb;
+    --input-focus: #4169e1;
+    --input-text: #111827;
+    --input-placeholder: #9ca3af;
+    
+    /* Button colors */
+    --btn-primary-bg: #4169e1;
+    --btn-primary-hover: #2a4bb9;
+    --btn-secondary-bg: rgba(65, 105, 225, 0.1);
+    --btn-secondary-hover: rgba(65, 105, 225, 0.2);
+    --btn-text: #ffffff;
+    --btn-secondary-text: #4169e1;
+    
+    /* Nav colors */
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --nav-border: rgba(229, 231, 235, 0.8);
+    --nav-text: #111827;
+    --nav-text-hover: #4169e1;
+    --nav-text-active: #4169e1;
+    
+    /* Footer colors */
+    --footer-bg: #f8f9fa;
+    --footer-text: #4b5563;
+    
+    /* Social colors */
+    --social-hover: #4169e1;
+    
+    /* Timeline colors */
+    --timeline-line: #e5e7eb;
+    --timeline-dot: #4169e1;
+    
+    /* Misc */
+    --scrollbar-thumb: #d1d5db;
+    --scrollbar-track: #f1f5f9;
+    
+    /* Content width */
+    --max-width: 1200px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Dark Theme */
+/* Dark Theme - Update this section in styles/themes.css */
+/* Dark Theme - Updated for an even darker appearance */
+[data-theme-mode="dark"] {
+    /* Extremely dark backgrounds */
+    --background: #050914;         /* Much darker background (was #0a101f) */
+    --background-alt: #0c1526;     /* Much darker alternative background (was #141e33) */
+    --foreground: #ffffff;         /* Increased contrast for main text */
+    --foreground-alt: #e2e8f0;
+    --foreground-muted: #94a3b8;
+    
+    /* Very dark card backgrounds */
+    --card-bg: #0c1526;            /* Much darker card background (was #141e33) */
+    --card-bg-hover: #121f38;      /* Much darker card hover state (was #1c2742) */
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --card-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.6);
+    
+    /* Almost black borders */
+    --border-color: #1a263f;       /* Much darker border (was #2a3655) */
+    --border-color-hover: #243555; /* Much darker border hover (was #3a4a70) */
+    
+    /* Increased text contrast for readability */
+    --text-primary: #ffffff;       /* Pure white for primary text */
+    --text-secondary: #e2e8f0;
+    --text-tertiary: #94a3b8;
+    
+    /* Very dark input fields */
+    --input-bg: #0c1526;           /* Much darker input background (was #141e33) */
+    --input-border: #1a263f;       /* Much darker input border (was #2a3655) */
+    --input-text: #ffffff;
+    --input-placeholder: #64748b;
+    
+    /* Button styles with better visibility */
+    --btn-secondary-bg: rgba(65, 105, 225, 0.12);
+    --btn-secondary-hover: rgba(65, 105, 225, 0.22);
+    
+    /* Almost black nav elements */
+    --nav-bg: rgba(5, 9, 20, 0.9);  /* Much darker nav background (was rgba(10, 16, 31, 0.8)) */
+    --nav-border: rgba(26, 38, 63, 0.8); /* Much darker nav border */
+    --nav-text: #ffffff;
+    
+    /* Very dark footer */
+    --footer-bg: #0c1526;          /* Much darker footer (was #141e33) */
+    --footer-text: #e2e8f0;
+    
+    /* Almost black timeline */
+    --timeline-line: #1a263f;      /* Much darker timeline (was #2a3655) */
+    
+    /* Very dark scrollbar */
+    --scrollbar-thumb: #243555;    /* Much darker scrollbar thumb (was #3a4a70) */
+    --scrollbar-track: #0c1526;    /* Much darker scrollbar track (was #141e33) */
+    
+    /* Increase primary color brightness for better visibility against darker backgrounds */
+    --color-primary-light: #7d91f0; /* Slightly brighter primary light color */
+    a:focus, button:focus, input:focus, textarea:focus, select:focus {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+    
+    /* Subtle glow effect for primary buttons */
+    .btn-primary {
+        box-shadow: 0 0 15px rgba(77, 122, 255, 0.3);
+    }
+    
+    .btn-primary:hover {
+        box-shadow: 0 0 20px rgba(77, 122, 255, 0.5);
+    }
+    
+    /* Enhance contrast for important UI elements */
+    .section-title {
+        text-shadow: 0 0 10px rgba(77, 122, 255, 0.2);
+    }
+    
+    /* Subtle glow for social icons */
+    .social-link:hover {
+        box-shadow: 0 0 15px rgba(77, 122, 255, 0.3);
+    }
+    
+    /* Ensure code and pre blocks remain readable */
+    code, pre {
+        background-color: #0a0f18;
+        border: 1px solid #101522;
+    }
+}
+
+/* High Contrast Theme */
+[data-theme-mode="contrast"] {
+    --color-primary: #0056b3;
+    --color-primary-light: #0066cc;
+    --color-primary-dark: #004080;
+    --color-secondary: #6200ea;
+    --color-secondary-light: #7c4dff;
+    --color-secondary-dark: #5600e8;
+    --color-accent: #d50000;
+    
+    --background: #ffffff;
+    --background-alt: #f0f0f0;
+    --foreground: #000000;
+    --foreground-alt: #151515;
+    --foreground-muted: #333333;
+    
+    --card-bg: #ffffff;
+    --card-bg-hover: #f5f5f5;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --card-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.18);
+    
+    --border-color: #000000;
+    --border-color-hover: #333333;
+    
+    --text-primary: #000000;
+    --text-secondary: #151515;
+    --text-tertiary: #333333;
+    --text-on-primary: #ffffff;
+    --text-on-secondary: #ffffff;
+    
+    --input-bg: #ffffff;
+    --input-border: #000000;
+    --input-focus: #0056b3;
+    --input-text: #000000;
+    --input-placeholder: #666666;
+    
+    --btn-primary-bg: #0056b3;
+    --btn-primary-hover: #004080;
+    --btn-secondary-bg: #f0f0f0;
+    --btn-secondary-hover: #e0e0e0;
+    --btn-text: #ffffff;
+    --btn-secondary-text: #0056b3;
+    
+    --nav-bg: #ffffff;
+    --nav-border: #000000;
+    --nav-text: #000000;
+    --nav-text-hover: #0056b3;
+    --nav-text-active: #0056b3;
+    
+    --footer-bg: #f0f0f0;
+    --footer-text: #000000;
+    
+    --social-hover: #0056b3;
+    
+    --timeline-line: #000000;
+    --timeline-dot: #0056b3;
+    
+    --scrollbar-thumb: #666666;
+    --scrollbar-track: #f0f0f0;
+}
+
+/* Color Schemes */
+
+/* Default scheme - already defined in root */
+
+/* Midnight Scheme */
+[data-color-scheme="midnight"] {
+    --color-primary: #9d4edd;
+    --color-primary-light: #b04ded;
+    --color-primary-dark: #7b2cbf;
+    --color-secondary: #3c096c;
+    --color-secondary-light: #5a189a;
+    --color-secondary-dark: #240046;
+    --color-accent: #ff9e00;
+    
+    --btn-primary-bg: #9d4edd;
+    --btn-primary-hover: #7b2cbf;
+    --btn-secondary-bg: rgba(157, 78, 221, 0.1);
+    --btn-secondary-hover: rgba(157, 78, 221, 0.2);
+    --btn-secondary-text: #9d4edd;
+    
+    --nav-text-hover: #9d4edd;
+    --nav-text-active: #9d4edd;
+    
+    --social-hover: #9d4edd;
+    --timeline-dot: #9d4edd;
+    --input-focus: #9d4edd;
+}
+
+/* Sunset Scheme */
+[data-color-scheme="sunset"] {
+    --color-primary: #ff6b6b;
+    --color-primary-light: #ff8787;
+    --color-primary-dark: #fa5252;
+    --color-secondary: #ff922b;
+    --color-secondary-light: #ffa94d;
+    --color-secondary-dark: #f76707;
+    --color-accent: #20c997;
+    
+    --btn-primary-bg: #ff6b6b;
+    --btn-primary-hover: #fa5252;
+    --btn-secondary-bg: rgba(255, 107, 107, 0.1);
+    --btn-secondary-hover: rgba(255, 107, 107, 0.2);
+    --btn-secondary-text: #ff6b6b;
+    
+    --nav-text-hover: #ff6b6b;
+    --nav-text-active: #ff6b6b;
+    
+    --social-hover: #ff6b6b;
+    --timeline-dot: #ff6b6b;
+    --input-focus: #ff6b6b;
+}
+
+/* Forest Scheme */
+[data-color-scheme="forest"] {
+    --color-primary: #38b2ac;
+    --color-primary-light: #4fd1c5;
+    --color-primary-dark: #2c7a7b;
+    --color-secondary: #2f855a;
+    --color-secondary-light: #38a169;
+    --color-secondary-dark: #276749;
+    --color-accent: #d69e2e;
+    
+    --btn-primary-bg: #38b2ac;
+    --btn-primary-hover: #2c7a7b;
+    --btn-secondary-bg: rgba(56, 178, 172, 0.1);
+    --btn-secondary-hover: rgba(56, 178, 172, 0.2);
+    --btn-secondary-text: #38b2ac;
+    
+    --nav-text-hover: #38b2ac;
+    --nav-text-active: #38b2ac;
+    
+    --social-hover: #38b2ac;
+    --timeline-dot: #38b2ac;
+    --input-focus: #38b2ac;
+}
+
+/* Theme Transitions */
+body {
+    transition: background-color var(--transition-normal),
+                color var(--transition-normal);
+}
+
+/* Theme preview styles */
+.light-preview {
+    background: linear-gradient(to right, #ffffff 50%, #f8f9fa 50%);
+    border: 1px solid #e5e7eb;
+}
+
+.dark-preview {
+    background: linear-gradient(to right, #0f172a 50%, #1e293b 50%);
+    border: 1px solid #334155;
+}
+
+.contrast-preview {
+    background: linear-gradient(to right, #ffffff 50%, #f0f0f0 50%);
+    border: 2px solid #000000;
+}
+
+.color-default {
+    background: linear-gradient(135deg, #4169e1, #6c63ff);
+}
+
+.color-midnight {
+    background: linear-gradient(135deg, #9d4edd, #3c096c);
+}
+
+.color-sunset {
+    background: linear-gradient(135deg, #ff6b6b, #ff922b);
+}
+
+.color-forest {
+    background: linear-gradient(135deg, #38b2ac, #2f855a);
+}
+
+/* Theme panel styles */
+.theme-panel {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    z-index: 100;
+    border-radius: 12px 0 0 12px;
+    overflow: hidden;
+    transition: transform var(--transition-normal);
+    max-width: 300px;
+    width: 300px;
+    transform: translateX(300px) translateY(-50%);
+}
+
+.theme-panel.open {
+    transform: translateX(0) translateY(-50%);
+}
+
+.theme-panel-toggle {
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: var(--card-bg);
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+}
+
+.theme-panel-toggle i {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.theme-panel-content {
+    padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.theme-panel-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.theme-section {
+    margin-bottom: 25px;
+}
+
+.theme-section h4 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+}
+
+.theme-option-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.theme-option {
+    width: calc(33.333% - 7px);
+    text-align: center;
+    cursor: pointer;
+}
+
+.theme-preview {
+    width: 100%;
+    height: 40px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    transition: transform var(--transition-fast);
+}
+
+.theme-option:hover .theme-preview {
+    transform: translateY(-3px);
+}
+
+.theme-option.active .theme-preview {
+    outline: 2px solid var(--color-primary);
+}
+
+.theme-option span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.toggle-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.toggle-option span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--border-color);
+    transition: var(--transition-fast);
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--background);
+    transition: var(--transition-fast);
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--color-primary);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-light);
+}

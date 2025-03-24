@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick's Portfolio | Web Developer & Designer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%234169e1%22></rect><path fill=%22%23fff%22 d=%22M30.24 62.84L41.36 33.08L49.20 33.08L60.40 62.84L52.20 62.84L49.96 56.12L40.52 56.12L38.28 62.84L30.24 62.84ZM42.20 49.72L48.28 49.72L45.20 39.88L42.20 49.72ZM66.94 62.84L66.94 33.08L75.22 33.08L75.22 62.84L66.94 62.84Z%22></path></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/timeline.css">
+    <script src="scripts/timeline.js" defer></script>
+</head>
+<body class="theme-default" data-theme-mode="light" data-color-scheme="default">
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    
+    <!-- Theme Selector Panel -->
+    <div class="theme-panel">
+        <div class="theme-panel-toggle">
+            <i class="fas fa-palette"></i>
+        </div>
+        <div class="theme-panel-content">
+            <h3>Customize Experience</h3>
+            
+            <div class="theme-section">
+                <h4>Theme Mode</h4>
+                <div class="theme-option-group">
+                    <div class="theme-option" data-theme-mode="light">
+                        <div class="theme-preview light-preview"></div>
+                        <span>Light</span>
+                    </div>
+                    <div class="theme-option" data-theme-mode="dark">
+                        <div class="theme-preview dark-preview"></div>
+                        <span>Dark</span>
+                    </div>
+                    <div class="theme-option" data-theme-mode="contrast">
+                        <div class="theme-preview contrast-preview"></div>
+                        <span>High Contrast</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="theme-section">
+                <h4>Color Scheme</h4>
+                <div class="theme-option-group">
+                    <div class="theme-option" data-color-scheme="default">
+                        <div class="theme-preview color-default"></div>
+                        <span>Default</span>
+                    </div>
+                    <div class="theme-option" data-color-scheme="midnight">
+                        <div class="theme-preview color-midnight"></div>
+                        <span>Midnight</span>
+                    </div>
+                    <div class="theme-option" data-color-scheme="sunset">
+                        <div class="theme-preview color-sunset"></div>
+                        <span>Sunset</span>
+                    </div>
+                    <div class="theme-option" data-color-scheme="forest">
+                        <div class="theme-preview color-forest"></div>
+                        <span>Forest</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="theme-section">
+                <h4>Effects</h4>
+                <div class="toggle-option">
+                    <span>Particles Background</span>
+                    <label class="switch">
+                        <input type="checkbox" id="particles-toggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="toggle-option">
+                    <span>3D Card Effects</span>
+                    <label class="switch">
+                        <input type="checkbox" id="card-effects-toggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="toggle-option">
+                    <span>Custom Cursor</span>
+                    <label class="switch">
+                        <input type="checkbox" id="cursor-toggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#home">nicknet<span class="highlight">06</span></a>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home" class="nav-link active"><span class="nav-number">01</span>Home</a></li>
+                    <li><a href="#about" class="nav-link"><span class="nav-number">02</span>About</a></li>
+                    <li><a href="#work" class="nav-link"><span class="nav-number">03</span>Projects</a></li>
+                    <li><a href="#skills" class="nav-link"><span class="nav-number">04</span>Skills</a></li>
+                    <li><a href="#blog" class="nav-link"><span class="nav-number">05</span>Blog</a></li>
+                    <li><a href="#contact" class="nav-link"><span class="nav-number">06</span>Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mode-switcher">
+                <div class="mode-icon light-icon active">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div class="mode-icon dark-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles-container" id="particles-js"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-hello">Hello World, I'm</div>
+                <h1 class="hero-name">Nick<span class="highlight">net06</span></h1>
+                <div class="hero-title">
+                    <span class="static-text">I create</span>
+                    <span class="dynamic-text-wrapper">
+                        <span class="dynamic-text">websites</span>
+                        <span class="dynamic-text">experiences</span>
+                        <span class="dynamic-text">solutions</span>
+                        <span class="dynamic-text">innovations</span>
+                    </span>
+                </div>
+                <p class="hero-description">
+                    A passionate full-stack developer and designer creating 
+                    immersive digital experiences that blend creativity with functionality.
+                </p>
+                <div class="hero-cta">
+                    <a href="#work" class="btn btn-primary">View My Work</a>
+                    <a href="assets/resume.pdf" class="btn btn-secondary" download>Download CV</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="50">0</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="20">0</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-image-wrapper">
+                    <div class="profile-border"></div>
+                    <div class="profile-image">
+                        <img src="assets/images/profile.jpg" alt="Nick's profile image">
+                    </div>
+                </div>
+                <div class="hero-social">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Who Am I</span>
+                <h2 class="section-title">About Me</h2>
+                <span class="section-line"></span>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image-container">
+                    <div class="about-image-wrapper">
+                        <img src="assets/images/profile.jpg" alt="About Nick" class="about-image">
+                        <div class="experience-badge">
+                            <span class="exp-years">5</span>
+                            <span class="exp-text">Years of<br>Experience</span>
+                        </div>
+                    </div>
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>A passionate Web Developer based in New York City</h3>
+                    <p>
+                        Hello! I'm Nick, a full-stack developer with a passion for creating beautiful, 
+                        functional, and user-centered digital experiences. I started my journey as a front-end 
+                        developer and gradually expanded my skill set to include back-end technologies.
+                    </p>
+                    <p>
+                        With 5 years of experience in the industry, I've had the privilege of working with diverse 
+                        clients from startups to established enterprises, helping them achieve their digital goals 
+                        through innovative solutions and cutting-edge technologies.
+                    </p>
+                    <ul class="about-info">
+                        <li>
+                            <span class="info-title">Name:</span>
+                            <span class="info-value">Nick Johnson</span>
+                        </li>
+                        <li>
+                            <span class="info-title">Email:</span>
+                            <span class="info-value">hello@nicknet06.com</span>
+                        </li>
+                        <li>
+                            <span class="info-title">Location:</span>
+                            <span class="info-value">New York, USA</span>
+                        </li>
+                        <li>
+                            <span class="info-title">Availability:</span>
+                            <span class="info-value">Open to opportunities</span>
+                        </li>
+                    </ul>
+                    <a href="assets/resume.pdf" class="btn btn-primary" download>Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">My Journey</h2>
+            <div class="timeline">
+                <!-- Timeline items -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - Present</div>
+                        <h3>Senior Web Developer</h3>
+                        <h4>Tech Innovations Inc.</h4>
+                        <p>Leading development of enterprise web applications, managing a team of 5 developers, and implementing CI/CD pipelines to streamline deployment processes.</p>
+                        <div class="tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>AWS</span>
+                            <span>Team Lead</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2023</div>
+                        <h3>Full Stack Developer</h3>
+                        <h4>Digital Solutions Group</h4>
+                        <p>Developed responsive web applications and RESTful APIs. Collaborated with design team to implement modern user interfaces and improve user experience.</p>
+                        <div class="tags">
+                            <span>JavaScript</span>
+                            <span>Vue.js</span>
+                            <span>Express</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018 - 2020</div>
+                        <h3>Frontend Developer</h3>
+                        <h4>WebCraft Studios</h4>
+                        <p>Created responsive websites and implemented interactive UI components. Optimized website performance and collaborated with backend developers on API integration.</p>
+                        <div class="tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>jQuery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016 - 2018</div>
+                        <h3>Web Design Intern</h3>
+                        <h4>Creative Minds Agency</h4>
+                        <p>Assisted senior designers with website mockups and basic frontend implementation. Learned fundamental web development principles and best practices.</p>
+                        <div class="tags">
+                            <span>UI Design</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>WordPress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="work" class="work">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <span class="section-line"></span>
+            </div>
+            
+            <div class="work-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="app">Applications</button>
+                <button class="filter-btn" data-filter="ui">UI/UX</button>
+            </div>
+            
+            <div class="work-grid">
+                <!-- Project Card 1 -->
+                <div class="work-card" data-category="web app">
+                    <div class="work-card-inner">
+                        <div class="work-card-front">
+                            <img src="assets/images/projects/project1.jpg" alt="E-commerce Platform">
+                            <div class="work-overlay">
+                                <div class="work-category">Web Design</div>
+                                <h3 class="work-title">E-commerce Platform</h3>
+                                <div class="work-hover-text">View Details</div>
+                            </div>
+                        </div>
+                        <div class="work-card-back">
+                            <h3>E-commerce Platform</h3>
+                            <p>A comprehensive online shopping platform with product management, cart functionality, and secure payment processing.</p>
+                            <div class="work-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                                <span>Stripe</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="#" class="work-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" class="work-link"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2 -->
+                <div class="work-card" data-category="ui">
+                    <div class="work-card-inner">
+                        <div class="work-card-front">
+                            <img src="assets/images/projects/project2.jpg" alt="Dashboard UI Kit">
+                            <div class="work-overlay">
+                                <div class="work-category">UI/UX</div>
+                                <h3 class="work-title">Dashboard UI Kit</h3>
+                                <div class="work-hover-text">View Details</div>
+                            </div>
+                        </div>
+                        <div class="work-card-back">
+                            <h3>Dashboard UI Kit</h3>
+                            <p>A comprehensive UI kit for creating modern, responsive admin dashboards with over 100 components and templates.</p>
+                            <div class="work-tech">
+                                <span>Figma</span>
+                                <span>HTML/CSS</span>
+                                <span>JavaScript</span>
+                                <span>Sketch</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="#" class="work-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" class="work-link"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3 -->
+                <div class="work-card" data-category="app">
+                    <div class="work-card-inner">
+                        <div class="work-card-front">
+                            <img src="assets/images/projects/project3.jpg" alt="Task Management App">
+                            <div class="work-overlay">
+                                <div class="work-category">Application</div>
+                                <h3 class="work-title">Task Management App</h3>
+                                <div class="work-hover-text">View Details</div>
+                            </div>
+                        </div>
+                        <div class="work-card-back">
+                            <h3>Task Management App</h3>
+                            <p>A productivity tool that helps users organize tasks, set priorities, and track progress with real-time collaboration.</p>
+                            <div class="work-tech">
+                                <span>Vue.js</span>
+                                <span>Firebase</span>
+                                <span>Vuetify</span>
+                                <span>PWA</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="#" class="work-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" class="work-link"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 4 -->
+                <div class="work-card" data-category="web">
+                    <div class="work-card-inner">
+                        <div class="work-card-front">
+                            <img src="assets/images/projects/project4.jpg" alt="Portfolio Website">
+                            <div class="work-overlay">
+                                <div class="work-category">Web Design</div>
+                                <h3 class="work-title">Portfolio Website</h3>
+                                <div class="work-hover-text">View Details</div>
+                            </div>
+                        </div>
+                        <div class="work-card-back">
+                            <h3>Portfolio Website</h3>
+                            <p>A responsive portfolio website with dark/light mode, 3D effects, and interactive elements to showcase creative work.</p>
+                            <div class="work-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>GSAP</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="#" class="work-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" class="work-link"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 5 -->
+                <div class="work-card" data-category="ui app">
+                    <div class="work-card-inner">
+                        <div class="work-card-front">
+                            <img src="assets/images/projects/project5.jpg" alt="Weather App">
+                            <div class="work-overlay">
+                                <div class="work-category">UI/UX & App</div>
+                                <h3 class="work-title">Weather Application</h3>
+                                <div class="work-hover-text">View Details</div>
+                            </div>
+                        </div>
+                        <div class="work-card-back">
+                            <h3>Weather Application</h3>
+                            <p>A beautifully designed weather application with 7-day forecast, location-based data, and interactive visualizations.</p>
+                            <div class="work-tech">
+                                <span>React</span>
+                                <span>Weather API</span>
+                                <span>D3.js</span>
+                                <span>Geolocation</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="#" class="work-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" class="work-link"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 6 -->
+                <div class="work-card" data-category="web ui">
+                    <div class="work-card-inner">
+                        <div class="work-card-front">
+                            <img src="assets/images/projects/project6.jpg" alt="Blog Platform">
+                            <div class="work-overlay">
+                                <div class="work-category">Web & UI</div>
+                                <h3 class="work-title">Blog Platform</h3>
+                                <div class="work-hover-text">View Details</div>
+                            </div>
+                        </div>
+                        <div class="work-card-back">
+                            <h3>Blog Platform</h3>
+                            <p>A feature-rich blogging platform with markdown support, comments system, and user management functionality.</p>
+                            <div class="work-tech">
+                                <span>Next.js</span>
+                                <span>GraphQL</span>
+                                <span>Tailwind CSS</span>
+                                <span>Auth0</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="#" class="work-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" class="work-link"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="work-cta">
+                <a href="#" class="btn btn-secondary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My Expertise</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <span class="section-line"></span>
+            </div>
+            
+            <div class="skills-tabs">
+                <button class="skills-tab active" data-tab="technical">Technical</button>
+                <button class="skills-tab" data-tab="soft">Soft Skills</button>
+                <button class="skills-tab" data-tab="tools">Tools</button>
+            </div>
+            
+            <div class="skills-content">
+                <!-- Technical Skills -->
+                <div class="skills-data active" id="technical">
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>HTML5</h3>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-progress="95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>CSS3/SCSS</h3>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-progress="90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>JavaScript</h3>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-progress="85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>React.js</h3>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-progress="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>Node.js</h3>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-progress="75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>MongoDB</h3>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-progress="70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>Responsive Design</h3>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-progress="95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-vuejs"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>Vue.js</h3>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-progress="65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="skills-data" id="soft">
+                    <div class="soft-skills-container">
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Team Collaboration</h3>
+                            <p>Effective communication and collaborative problem-solving in cross-functional teams.</p>
+                        </div>
+                        
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <h3>Project Management</h3>
+                            <p>Experience with Agile methodologies, sprint planning, and task prioritization.</p>
+                        </div>
+                        
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Problem Solving</h3>
+                            <p>Analytical thinking and creative approach to technical challenges.</p>
+                        </div>
+                        
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Communication</h3>
+                            <p>Clear and concise communication of complex technical concepts to non-technical stakeholders.</p>
+                        </div>
+                        
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Time Management</h3>
+                            <p>Efficiently managing multiple projects and meeting deadlines consistently.</p>
+                        </div>
+                        
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3>Continuous Learning</h3>
+                            <p>Passionate about staying updated with the latest technologies and industry trends.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools -->
+                <div class="skills-data" id="tools">
+                    <div class="tools-container">
+                        <div class="tool-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHBhdGggZD0iTTMyIDJsLTIwIDEwdjQwbDIwIDEwIDIwLTEwdj00MHoiIGZpbGw9IiM3NTRjOWMiLz48cGF0aCBkPSJNNTIgMTJsLTIwLTEwLTIwIDEwIDIwIDEweiIgZmlsbD0iI2MwOGJkYiIvPjxwYXRoIGQ9Ik0zMiAyMnYyMGw4IDR2LTIweiIgZmlsbD0iI2M3OTZlMyIvPjxwYXRoIGQ9Ik0yNCAyNnYyMGw4LTR2LTIweiIgZmlsbD0iI2FiNjhjYyIvPjxwYXRoIGQ9Ik0zMiA0MnYxMGwyMC0xMHYtMTB6IiBmaWxsPSIjOWM1N2JiIi8+PHBhdGggZD0iTTEyIDMydjEwbDIwIDEwdi0xMHoiIGZpbGw9IiM4MjRhYTkiLz48L3N2Zz4=" alt="Figma" class="tool-icon">
+                            <h3>Figma</h3>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHBhdGggZD0iTTIxIDJsLTE5IDM4IDEwIDIyaDIwbDEwLTIyLTE5LTM4eiIgZmlsbD0iIzQ3YzVmYiIvPjxwYXRoIGQ9Ik01MiA0MGwtMTAgMjJoMjB6IiBmaWxsPSIjMDBhY2VhIi8+PHBhdGggZD0iTTIxIDJsMTkgMzggMTgtMzh6IiBmaWxsPSIjIFIxYmNmZiIvPjwvc3ZnPg==" alt="VS Code" class="tool-icon">
+                            <h3>VS Code</h3>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHBhdGggZD0iTTMyIDJjLTE2LjU2OCAwLTMwIDEzLjQzMi0zMCAzMHMxMy40MzIgMzAgMzAgMzAgMzAtMTMuNDMyIDMwLTMwLTEzLjQzMi0zMC0zMC0zMHptMTkuMDI4IDQ5LjAyOGMtNS4wMTQgNS4wMTQtMTEuNjY4IDcuNzcyLTE4Ljc0NyA3Ljc3MnMtMTMuNzMzLTIuNzU4LTE4Ljc0Ny03Ljc3MmMtNS4wMTQtNS4wMTQtNy43NzItMTEuNjY4LTcuNzcyLTE4Ljc0N3MyLjc1OC0xMy43MzMgNy43NzItMTguNzQ3YzUuMDE0LTUuMDE0IDExLjY2OC03Ljc3MiAxOC43NDctNy43NzJzMTMuNzMzIDIuNzU4IDE4Ljc0NyA3Ljc3MmM1LjAxNCA1LjAxNCA3Ljc3MiAxMS42NjggNy43NzIgMTguNzQ3cy0yLjc1OCAxMy43MzMtNy43NzIgMTguNzQ3eiIgZmlsbD0iIzI0MjkyZSIvPjxwYXRoIGQ9Ik0zOS40ODkgMTcuNjc0Yy0xLjEzMS0uNTY5LTIuMzkyLS4yNzgtMy4zNjcuNzU2bC0xNy4xMTEgMTcuMTExLTQuNjI2LTQuNjI2Yy0xLjAzNC0xLjAzNC0yLjcwOS0xLjAzNC0zLjc0MiAwcy0xLjAzNCAyLjcwOSAwIDMuNzQybDYuNDk3IDYuNDk3YzEuMDM0IDEuMDM0IDIuNzA5IDEuMDM0IDMuNzQyIDBsMTguOTgyLTE4Ljk4MmMuOTc1LS45NzUgMS4zMjYtMi4yMzYuNzU2LTMuMzY3LS41NjktMS4xMzEtMS43NTYtMS42OTktMy4wMTEtMS42OTlzLTIuNDQyLjU2OC0zLjAxMSAxLjY5OXoiIGZpbGw9IiM5Y2E0YWYiLz48L3N2Zz4=" alt="Git" class="tool-icon">
+                            <h3>Git</h3>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHBhdGggZD0iTTU3IDEyaC01MGMtMi43NTcgMC01IDIuMjQzLTUgNXYzMGMwIDIuNzU3IDIuMjQzIDUgNSA1aDUwYzIuNzU3IDAgNS0yLjI0MyA1LTVWMTdjMC0yLjc1Ny0yLjI0My01LTUtNXoiIGZpbGw9IiMzODg5ZWMiLz48cGF0aCBkPSJNMTkgMzNIMjZ2MkgxOXoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNMTkgMjdoMTB2MkgxOXoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNMTkgMzloMTh2MkgxOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" alt="Jira" class="tool-icon">
+                            <h3>Jira</h3>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHBhdGggZD0iTTMyIDJDMTUuNDU1IDIgMiAxNS40NTUgMiAzMnMxMy40NTUgMzAgMzAgMzAgMzAtMTMuNDU1IDMwLTMwUzQ4LjU0NSAyIDMyIDJ6IiBmaWxsPSIjMjVhNzQ1Ii8+PHBhdGggZD0iTTI2IDE1djM0bDI0LTE3eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" alt="Netlify" class="tool-icon">
+                            <h3>Netlify</h3>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHBhdGggZD0iTTYxIDEySDNjLTEuMTA1IDAtMiAuODk1LTIgMnYzMGMwIDIuMTA1Ljg5NSAyIDIgMmg1OGMxLjEwNSAwIDItLjg5NSAyLTJWMTRjMC0xLjEwNS0uODk1LTItMi0yeiIgZmlsbD0iIzU0NWU2ZiIvPjxwYXRoIGQ9Ik0zMiAzNmE4IDggMCAxIDAgMC0xNiA4IDggMCAwIDAgMCAxNnoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNMzIgMjJhNiA2IDAgMSAwIDAgMTIgNiA2IDAgMCAwIDAtMTJ6IiBmaWxsPSIjMzMzIi8+PHBhdGggZD0iTTMyIDI0YTQgNCAwIDEgMCAwIDggNCA0IDAgMCAwIDAtOHptMCAyYTIgMiAwIDEgMSAwIDQgMiAyIDAgMCAxIDAtNHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" alt="Docker" class="tool-icon">
+                            <h3>Docker</h3>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHBhdGggZD0iTTU0IDEwSDEwYy0yLjIwNiAwLTQgMS43OTQtNCA0djM2YzAgMi4yMDYgMS43OTQgNCA0IDRoNDRjMi4yMDYgMCA0LTEuNzk0IDQtNFYxNGMwLTIuMjA2LTEuNzk0LTQtNC00eiIgZmlsbD0iI2UwZTBlMCIvPjxwYXRoIGQ9Ik0zMCAyNmgtMTB2NmgxMHYtNnptNCA0aDEwdi00aC0xMHY0em0tNCAxNGgxMHYtNmgtMTB2NnptLTQtNGgtMTB2NGgxMHYtNHoiIGZpbGw9IiM1NDVlNmYiLz48L3N2Zz4=" alt="AWS" class="tool-icon">
+                            <h3>AWS</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Latest Articles</span>
+                <h2 class="section-title">My Blog</h2>
+                <span class="section-line"></span>
+            </div>
+            
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/images/blog1.jpg" alt="Blog Post 1">
+                        <div class="blog-category">Web Development</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <span class="date-day">15</span>
+                            <span class="date-month">Mar</span>
+                        </div>
+                        <h3 class="blog-title">The Future of Web Development: Trends to Watch in 2025</h3>
+                        <p class="blog-excerpt">Exploring emerging technologies and methodologies that are shaping the future of web development...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/images/blog2.jpg" alt="Blog Post 2">
+                        <div class="blog-category">UI/UX Design</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <span class="date-day">28</span>
+                            <span class="date-month">Feb</span>
+                        </div>
+                        <h3 class="blog-title">Designing for Accessibility: Best Practices and Common Pitfalls</h3>
+                        <p class="blog-excerpt">Creating inclusive digital experiences that work for everyone, regardless of abilities or disabilities...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/images/blog3.jpg" alt="Blog Post 3">
+                        <div class="blog-category">JavaScript</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <span class="date-day">10</span>
+                            <span class="date-month">Jan</span>
+                        </div>
+                        <h3 class="blog-title">Advanced JavaScript Patterns Every Developer Should Know</h3>
+                        <p class="blog-excerpt">Diving deep into design patterns, performance optimization techniques, and modern JavaScript features...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-cta">
+                <a href="#" class="btn btn-secondary">View All Articles</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What People Say</span>
+                <h2 class="section-title">Testimonials</h2>
+                <span class="section-line"></span>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            Nick delivered an exceptional e-commerce solution that exceeded our expectations. His attention to detail and ability to translate our vision into a functional, beautiful website was impressive.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="assets/images/testimonial1.jpg" alt="Client 1">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>CEO, Fashion Boutique</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            Working with Nick was a breeze. He took our outdated website and transformed it into a modern, responsive platform that has significantly improved our user engagement and conversion rates.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="assets/images/testimonial2.jpg" alt="Client 2">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Rodriguez</h4>
+                                <p>Marketing Director, Tech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            Nick's technical expertise and creative approach helped us develop a robust web application that streamlined our internal processes. His commitment to quality and timely delivery is commendable.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="assets/images/testimonial3.jpg" alt="Client 3">
+                            </div>
+                            <div class="author-info">
+                                <h4>Emily Chang</h4>
+                                <p>Product Manager, FinTech Startup</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-controls">
+                    <button class="testimonial-arrow prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="testimonial-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="testimonial-arrow next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+                <span class="section-line"></span>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>New York City, NY</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>hello@nicknet06.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h3>Follow Me</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    
+                    <div class="form-status">
+                        <div class="success-message">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Your message has been sent successfully!</p>
+                        </div>
+                        <div class="error-message">
+                            <i class="fas fa-times-circle"></i>
+                            <p>Oops! Something went wrong. Please try again.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home">nicknet<span class="highlight">06</span></a>
+                </div>
+                
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#work">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 nicknet06. All rights reserved. | Last update: March 22, 2025</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- JavaScript Files -->
+    <script src="scripts/particles.js"></script>
+    <script src="scripts/3d-cards.js"></script>
+    <script src="scripts/theme-manager.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

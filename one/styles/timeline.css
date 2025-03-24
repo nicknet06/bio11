@@ -1,0 +1,436 @@
+/*
+* Portfolio Timeline Component
+* Author: nicknet06
+* Version: 1.0.0
+* Last Update: 2025-03-23 13:22:15
+*/
+
+/* Timeline Variables */
+:root {
+    --primary-color: #4a6cf7;
+    --primary-color-rgb: 74, 108, 247;
+    --text-color: #1f2937;
+    --text-color-light: #6b7280;
+    --card-color: #ffffff;
+    --border-color: #e5e7eb;
+    --timeline-line-color: #e5e7eb;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --card-border-radius: 12px;
+    --transition: all 0.3s ease;
+    --dot-size: 24px;
+    --dot-pulse-size: 6px;
+}
+
+/* Dark Mode Variables - These will work with your existing dark mode */
+[data-theme-mode="dark"] {
+    --primary-color: #6a8bff;
+    --primary-color-rgb: 106, 139, 255;
+    --text-color: #f3f4f6;
+    --text-color-light: #9ca3af;
+    --card-color: #1a2233;
+    --border-color: #2e3544;
+    --timeline-line-color: #2e3544;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Styles */
+.experience {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-align: center;
+    position: relative;
+    color: var(--text-color);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Timeline Core Styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+/* Main timeline vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--timeline-line-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Timeline progress indicator */
+.timeline-progress {
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--primary-color) 30%, rgba(var(--primary-color-rgb), 0.3));
+    top: 0;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    z-index: 0;
+    transition: bottom 0.3s ease-out;
+}
+
+/* Timeline Item Styles */
+.timeline-item {
+    padding: 20px 0;
+    position: relative;
+    width: 50%;
+    left: 0;
+    margin-bottom: 60px;
+}
+
+/* Alternate items left/right */
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+/* Timeline dot/marker */
+.timeline-dot {
+    position: absolute;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    top: 30px;
+    right: -12px;
+    z-index: 1;
+    box-shadow: 0 0 0 var(--dot-pulse-size) rgba(var(--primary-color-rgb), 0.1);
+    transition: var(--transition);
+}
+
+/* Position dot for right-side items */
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -12px;
+    right: auto;
+}
+
+/* Dot hover effect */
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 calc(var(--dot-pulse-size) + 2px) rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Animated pulse effect for dots */
+.timeline-dot::before,
+.timeline-dot::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    opacity: 0.6;
+    z-index: -1;
+    animation: pulse 2s infinite;
+}
+
+.timeline-dot::after {
+    animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Timeline Content Card */
+.timeline-content {
+    padding: 30px;
+    background-color: var(--card-color);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    margin-right: 40px;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    z-index: 2;
+}
+
+/* Margin for right-side items */
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: 0;
+    margin-left: 40px;
+}
+
+/* Arrow pointer to timeline */
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--card-color);
+    transform: rotate(45deg);
+    z-index: -1;
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Arrow for right-side items */
+.timeline-item:nth-child(even) .timeline-content::after {
+    left: -15px;
+    right: auto;
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    border-top: none;
+}
+
+/* Card hover effects */
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Date badge */
+.timeline-date {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+    color: var(--primary-color);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Title styling */
+.timeline-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    color: var(--text-color);
+    position: relative;
+    display: inline-block;
+}
+
+/* Animated underline for title */
+.timeline-content h3::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.timeline-content:hover h3::after {
+    width: 100%;
+}
+
+/* Subtitle styling */
+.timeline-content h4 {
+    font-size: 1.1rem;
+    color: var(--text-color-light);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Paragraph text */
+.timeline-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Tags Styling */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags span {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: rgba(var(--primary-color-rgb), 0.07);
+    color: var(--primary-color);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.tags span:hover {
+    background-color: rgba(var(--primary-color-rgb), 0.15);
+    transform: translateY(-2px);
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delay */
+.timeline-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.timeline-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.timeline-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.timeline-item:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.timeline-item:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    /* Convert to left-side timeline */
+    .timeline::before {
+        left: 50px;
+    }
+    
+    .timeline-progress {
+        left: 50px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    
+    .timeline-dot {
+        left: 50px;
+        right: auto;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 50px;
+    }
+    
+    .timeline-content {
+        margin-left: 90px;
+        margin-right: 0;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 90px;
+    }
+    
+    /* Adjust the arrow pointer for all items */
+    .timeline-content::after,
+    .timeline-item:nth-child(even) .timeline-content::after {
+        left: -15px;
+        right: auto;
+        border-left: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        border-right: none;
+        border-top: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-progress {
+        left: 30px;
+    }
+    
+    .timeline-dot {
+        left: 30px;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .timeline-content {
+        margin-left: 60px;
+        padding: 20px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .timeline-content {
+        padding: 20px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .timeline-content h4 {
+        font-size: 1rem;
+    }
+    
+    .timeline-date {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+}
